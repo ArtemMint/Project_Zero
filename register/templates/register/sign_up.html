@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+
+{% block header %}
+    <a>Sign Up</a>
+{% endblock header %}
+
+{% block content %}
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        <p>{{ form.username.label }}</p>
+        <p>{{ form.username }}</p>
+        <p>{{ form.email.label }}</p>
+        <p>{{ form.email }}</p>
+        <p>{{ form.password.label }}</p>
+        <p>{{ form.password }}</p>
+        <p>{{ form.picture.label }}</p>
+        <p>{{ form.picture }}</p>
+        <p>{{ form.first_name.label }}</p>
+        <p>{{ form.first_name }}</p>
+        <p>{{ form.last_name.label }}</p>
+        <p>{{ form.last_name }}</p>
+        <p>{{ form.phone_number.label }}</p>
+        <p>{{ form.phone_number }}</p>
+        <p>{{ form.country.label }}</p>
+        <p>{{ form.country }}</p>
+        <p>{{ form.address.label }}</p>
+        <p>{{ form.address }}</p>
+        <button class="btn btn_user_create" type="submit">Sign Up</button>
+    </form>
+{% endblock %}

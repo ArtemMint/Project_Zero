@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+</head>
+<body>
+    {% block header %}
+        <a>{{blog.title}}</a>
+    {% endblock header %}
+
+    {% block content %}
+        <div class="content">
+            {% if blog.preview %}
+                <img class="post_preview"src="{{ blog.preview.url }}" alt="{{ blog.preview }}" style="width: 400px;">
+            {% endif %}
+            <h3 style="min-width: 15%; font-weight: 700;">{{ blog.text }}</h3>
+            <a class="label">Creator:</a> <a>{{ blog.author }}</a><br>
+            <p> <span class="label">Published date: </span> {{ blog.published_date }}</p>
+            <a class="btn btn_return" href="{% url 'blog:blog' %}">Return</a><br>
+            <div class="comment_list">
+                <a class="label">Comments</a>
+                <ul>
+                    {% for comm in blog.comment_set.all %}
+                        <li>User: {{ comm.author}}</li>
+                        <a>Wrote: {{ comm.comment_text }}</a><br>
+                        <a>When: {{ comm.published_comment }}</a><br>
+                    {% endfor %}
+                </ul>
+                <h2>Add a new comment</h2>
+                <form action="." method="post">
+                    <p class="label comment_label">{{ comment_form.comment_text.label }}</p>
+                    <p class="comment_text">{{ comment_form.comment_text }}</p>
+                    {% csrf_token %}
+                    <p><input class="btn comment_send" type="submit" value="Add comment"></p>
+                </form>
+                <a class=' btn btn_return' href="{% url 'blog:blog' %}">Return</a>
+            </div>  
+        </div>
+    {% endblock content %}
+        
+</body>
+</html>

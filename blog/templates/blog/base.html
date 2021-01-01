@@ -1,0 +1,44 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+    </head>
+
+    <body>
+        <header id="pageHeader">
+            {% block header %}
+            {% endblock header %}
+            <div class="profile_view">
+                
+                <a href="/register/logout">Logout</a>
+                <a href="/register/profile">{{request.user}}</a>
+            </div>
+        </header>
+
+        <article id="mainArticle">
+            {% block content %}
+            {% endblock %}
+        </article>
+
+        <nav id="mainNav">
+        
+            <a href="/home/">Home</a><br>
+            <a href="/blog/">Blog</a><br>
+            <a href="/register/sign_up">Sign Up</a><br>
+            <a href="/register/sign_in">Sign In</a><br>
+            <a href="#">Profile</a><br>
+        
+        </nav>
+
+        <div id="siteAds">Ads
+            {% block ads %}
+                
+            {% endblock ads %}
+        </div>
+            
+        <footer id="pageFooter">Footer
+        </footer>
+
+        </body>  
+</html>
+

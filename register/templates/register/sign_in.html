@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block header %}
+    <a>Sign In</a>
+{% endblock header %}
+
+{% block content %}
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        <p>{{ form.username.label }}</p>
+        <p>{{ form.username }}</p>
+        <p>{{ form.password.label }}</p>
+        <p>{{ form.password }}</p>
+        <button class="btn btn_user_sign_in" type="submit">Sign In</button>
+    </form>
+{% if error %}
+    <a>{{error}}</a>
+{% endif %}
+{% endblock %}

@@ -52,7 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'web.urls'
-#
+#sd
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

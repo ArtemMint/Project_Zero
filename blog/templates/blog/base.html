@@ -27,6 +27,10 @@
             <a href="/register/sign_up">Sign Up</a><br>
             <a href="/register/sign_in">Sign In</a><br>
             <a href="#">Profile</a><br>
+            {% if user.is_superuser %}
+                <a href="/admin">Admin page</a><br>
+            {% else %}
+            {% endif %}
         
         </nav>
 

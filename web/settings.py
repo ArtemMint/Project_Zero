@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@kyw!^72omo($o6zorc^=a$r123d_@=b4174(1x3t&lckz!k#zvr)i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["artemmint-web-project.herokuapp.com", "127.0.0.1"]
 
 
 # Application definition

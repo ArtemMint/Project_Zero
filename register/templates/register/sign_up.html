@@ -1,30 +1,23 @@
-{% extends 'blog/base.html' %}
+{% extends 'register/base.html' %}
+
+{% block title %}
+    <title>Sign Up in site</title>
+{% endblock title %}
 
 {% block header %}
-    <a>Sign Up</a>
+    <h3 class="head-text">Sign Up</h3>
 {% endblock header %}
 
 {% block content %}
     <form method="POST" class="post-form">
         {% csrf_token %}
-        <p>{{ form.username.label }}</p>
-        <p>{{ form.username }}</p>
-        <p>{{ form.email.label }}</p>
-        <p>{{ form.email }}</p>
-        <p>{{ form.password.label }}</p>
-        <p>{{ form.password }}</p>
-        <p>{{ form.picture.label }}</p>
-        <p>{{ form.picture }}</p>
-        <p>{{ form.first_name.label }}</p>
-        <p>{{ form.first_name }}</p>
-        <p>{{ form.last_name.label }}</p>
-        <p>{{ form.last_name }}</p>
-        <p>{{ form.phone_number.label }}</p>
-        <p>{{ form.phone_number }}</p>
-        <p>{{ form.country.label }}</p>
-        <p>{{ form.country }}</p>
-        <p>{{ form.address.label }}</p>
-        <p>{{ form.address }}</p>
+        {% for field in form %}
+            <p class="field">{{field.label}}</p>
+            <p class="field"></p>{{field}}</p>
+            {% if field.help_text %}
+                <a class='help_text'>{{ field.help_text }}</a>
+            {% endif %}<br>
+        {% endfor %}
         <button class="btn btn_user_create" type="submit">Sign Up</button>
     </form>
 {% endblock %}

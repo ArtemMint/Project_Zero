@@ -20,7 +20,7 @@ body {
 #mainArticle { 
     grid-area: article; 
     padding: 0px; 
-    border-radius: 10px;     
+    border-radius: 10px;    
 }
 #mainNav { 
     grid-area: nav; 
@@ -37,6 +37,13 @@ header, footer, article, nav, div {
 h1{
     text-align: center;
     font-size: 32px;
+}
+
+.article {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .content{
@@ -78,7 +85,19 @@ h1{
   }
 
 .profile_view{
-    margin: 0 0 0 auto;
-    padding: 0 0 0 auto;
-    float: right;
+    float: center;
 }
+
+.creating-article-form {
+    height: 100%;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    background-image: url(images/screen-0.jpg);
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

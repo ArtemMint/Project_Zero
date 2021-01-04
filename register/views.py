@@ -41,7 +41,7 @@ def sign_in_view(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    error = "User is valid, active and authenticated"
+                    return redirect('/home/')
                 else:
                     error = "The password is valid, but the account has been disabled!"
             else:

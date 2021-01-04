@@ -1,30 +1,25 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>New post</title>
-        <link rel="stylesheet" href="{% static 'blog/style.css' %}">
-    </head>
-    <body>
-        {% block header %}
-            <a>Create new post</a>
-        {% endblock header %}
-            
-        {% block content %}
-            <form method="POST" class="post-form" enctype="multipart/form-data">{% csrf_token %}
-                    <p class="label title_post">{{ form.title.label }}</p>
-                    <p class="title_post">{{ form.title }}</p>
-                    <p class="label text_post">{{ form.text.label }}</p>
-                    <p class="text_post">{{ form.text }}</p>
-                    <p class="label preview_post">{{ form.preview.label }}</p>
-                    <p class="preview_post">{{ form.preview }}</p>
-                    <button class="btn btn_save_post" type="submit" class='save_post_btn'>Save post</button>
-            </form>
-        {% endblock content %}
-        
-        
-    </body>
-</html>
+{% block title %}
+    <title>Creating new article</title>
+{% endblock title %}
+
+{% block header %}
+    <a>Creating new article</a>
+{% endblock header %}
+    
+{% block content %}
+    <div class="creating-article-form">
+        <form method="POST" class="post-form" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p class="label title_post">{{ form.title.label }}</p>
+            <p class="title_post">{{ form.title }}</p>
+            <p class="label text_post">{{ form.text.label }}</p>
+            <p class="text_post">{{ form.text }}</p>
+            <p class="label preview_post">{{ form.preview.label }}</p>
+            <p class="preview_post">{{ form.preview }}</p>
+            <button class="btn btn_save_post" type="submit" class='save_post_btn'>Save post</button>
+        </form>
+    </div>
+{% endblock content %}

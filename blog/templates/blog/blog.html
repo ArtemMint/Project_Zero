@@ -1,31 +1,24 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Blog</title>
-        <link rel="stylesheet" href="{% static 'blog/style.css' %}">
-    </head>
-    <body>
-        {% block header %}
-            <a>Blog</a>
-        {% endblock header %}
+{% block title %}
+    <title>Blog with articles</title>
+{% endblock title %}
 
-        {% block content %}
-            <div>
-                <a href="{% url 'blog:new_post' %}">Create new post</a><br>
-                {% if blog_list %}
-                    <ul>
-                    {% for blog in blog_list %}
-                        <li><a href="/blog/{{ blog.id }}/">{{ blog.title }}</a></li>
-                    {% endfor %}
-                {% else %}
-                    <a>Posts aren`t available.</a>
-                {% endif %}
-            </div>
-        {% endblock content %}
+{% block header %}
+    <a>Blog</a>
+{% endblock header %}
 
-    </body>
-</html>
+{% block content %}
+    <div>
+        <a href="{% url 'blog:new_post' %}">Create new post</a><br>
+        {% if blog_list %}
+            <ul>
+            {% for blog in blog_list %}
+                <li><a href="/blog/{{ blog.id }}/">{{ blog.title }}</a></li>
+            {% endfor %}
+        {% else %}
+            <a>Posts aren`t available.</a>
+        {% endif %}
+    </div>
+{% endblock content %}

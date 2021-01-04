@@ -15,7 +15,7 @@
 
         {% block content %}
             <div>
-                <a href="{% url 'blog:new_post' %}">Create new post</a> 
+                <a href="{% url 'blog:new_post' %}">Create new post</a><br>
                 {% if blog_list %}
                     <ul>
                     {% for blog in blog_list %}

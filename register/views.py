@@ -2,14 +2,14 @@ from django.http import HttpResponse
 from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import render, redirect
 
-from .forms import UserForm, SignInForm
+from .forms import SignInForm, SignUpForm #UserForm
 
 from django.contrib.auth.models import User
 
 
 def sign_up_view(request):
     if request.method == 'POST':
-        form = UserForm(request.POST, request.FILES)
+        form = SignUpForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -18,13 +18,13 @@ def sign_up_view(request):
             user = User.objects.create(username=username, 
                                        email=email)
             user.set_password(password)
-            user.first_name = form.cleaned_data.get('first_name')
-            user.last_name = form.cleaned_data.get('last_name')
+            # user.first_name = form.cleaned_data.get('first_name')
+            # user.last_name = form.cleaned_data.get('last_name')
             user.save()
             login(request, user)            
             return redirect('/home/')
     else:
-        form = UserForm()
+        form = SignUpForm()
     return render(
         request, 
         'register/sign_up.html',

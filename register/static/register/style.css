@@ -3,19 +3,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(images/screen-0.jpg);
+  /* background-image: url(images/screen-0.jpg); */
+
   /* Full height */
   height: 100%;
+
   /* Center and scale the image nicely */
   background-position: center;
+  background-color: rgb(105, 146, 199);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .border-form {
-  border: 3px solid rgb(9, 255, 0);
+  border: 3px solid rgba(0, 255, 157, 0.651);
   padding: 2%;
-  background-color: rgba(64, 167, 64, 0.952);
+  background-color: rgba(56, 182, 56, 0.651);
 }
 
 .field {

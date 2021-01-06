@@ -9,26 +9,18 @@ from django.contrib.auth.models import User
 
 def sign_up_view(request):
     if request.method == 'POST':
-        form = SignUpForm(request.POST, request.FILES)
+        form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            email = form.cleaned_data.get('email')
-            password = form.cleaned_data.get('password')
-            user = User.objects.create(username=username, 
-                                       email=email)
-            user.set_password(password)
-            # user.first_name = form.cleaned_data.get('first_name')
-            # user.last_name = form.cleaned_data.get('last_name')
-            user.save()
-            login(request, user)            
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
             return redirect('/home/')
     else:
         form = SignUpForm()
-    return render(
-        request, 
-        'register/sign_up.html',
-        {'form': form})
+    return render(request, 'register/sign_up.html', {'form': form})
+
 
 def sign_in_view(request):
     error = ''
@@ -48,14 +40,12 @@ def sign_in_view(request):
                 error = "The username and password were incorrect."
     else:
         form = SignInForm()
-    return render(
-        request, 
-        'register/sign_in.html',
-        {'form': form,
-        'error': error})
+    return render(request, 
+                'register/sign_in.html',
+                {'form': form,
+                'error': error})
 
 def logout_view(request):
     logout(request)
-    return render(
-        request, 
-        'register/logout.html')
+    return render(request, 
+                'register/logout.html')

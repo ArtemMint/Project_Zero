@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import User
+from .models import Profile
 
 
 class UserAdmin(admin.ModelAdmin):
-    model = User
+    model = Profile
 
 
 
-admin.site.register(User)
+admin.site.register(Profile)

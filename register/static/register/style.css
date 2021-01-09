@@ -9,15 +9,16 @@
 
   /* Center and scale the image nicely */
   background-position: center;
-  background-color: rgb(105, 146, 199);
+  background-color: rgb(255, 255, 255);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .border-form {
-  border: 3px solid rgba(0, 255, 157, 0.651);
+  border: 3px solid rgba(213, 236, 255, 0.795);
+  border-radius: 5px;
   padding: 2%;
-  background-color: rgba(56, 182, 56, 0.651);
+  background-color: rgba(182, 191, 255, 0.685);
 }
 
 .field {

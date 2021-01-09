@@ -10,8 +10,17 @@
 
     <body>
         <header id="pageHeader">
-            {% block header %}
-            {% endblock header %}
+            <a href="/home/">
+                <img class="site-logo" src="{% static 'blog/images/site-logo.png'%}" alt="site-logo.png" height="75" width="75">
+            </a>
+            <a href="/blog/">Blog</a>
+            <a href="/register/sign_up">Sign Up</a>
+            <a href="/register/sign_in">Sign In</a>
+            <a href="#">Profile</a>
+            {% if user.is_superuser %}
+                <a href="/admin">Admin page</a>
+            {% endif %}
+            
         </header>
 
         <article id="mainArticle">
@@ -20,16 +29,7 @@
         </article>
 
         <nav id="mainNav">
-        
-            <a href="/home/">Home</a><br>
-            <a href="/blog/">Blog</a><br>
-            <a href="/register/sign_up">Sign Up</a><br>
-            <a href="/register/sign_in">Sign In</a><br>
-            <a href="#">Profile</a><br>
-            {% if user.is_superuser %}
-                <a href="/admin">Admin page</a><br>
-            {% else %}
-            {% endif %}
+            
         
         </nav>
 

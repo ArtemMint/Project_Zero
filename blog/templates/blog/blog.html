@@ -11,7 +11,7 @@
 
 {% block content %}
     <div>
-        <p><a href="{% url 'blog:new_post' %}">Create new post</a></p>
+        <p><a class="btn btn-create-post" href="{% url 'blog:new_post' %}">Create new post</a></p>
         {% if blog_list %}
             {% for blog in blog_list %}
                 <div class="blog-container">

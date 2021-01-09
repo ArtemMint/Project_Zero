@@ -1,14 +1,15 @@
 body { 
     display: grid;
     grid-template-areas: 
-      "nav header header"
+      "header header header"
       "nav article ads"
       "nav footer ads";
-    grid-template-rows: 60px 1fr 60px;
-    grid-template-columns: 20% 1fr 15%;
+    grid-template-rows: 80px 1fr 80px;
+    grid-template-columns: 10% 1fr 13%;
     grid-gap: 3px;
     height: 100vh;
     margin: 0;
+    background-color: rgba(191, 241, 248, 0.712);
 }
 
 #pageHeader {
@@ -29,14 +30,23 @@ body {
     grid-area: ads; 
 }
 
-header, footer, article, nav, div {
+header {
+    padding: 0px;
+    background: rgb(255, 218, 187);
+}
+
+footer, article, nav, div {
     padding: 20px;
-    background: rgb(133, 255, 143);
+    background: rgb(255, 218, 187);
 }
 
 h1{
     text-align: center;
     font-size: 32px;
+}
+
+.site-logo {
+    float: left;
 }
 
 .article {
@@ -51,7 +61,7 @@ h1{
 }
 
 .comment_list{
-    background-color: rgb(81, 255, 96);
+    background-color: rgb(210, 248, 213);
     border-radius: 15px;
 }
 
@@ -66,8 +76,22 @@ h1{
     font-size: 20px;
 }
 
+.btn-create-post {
+    background-color: rgba(103, 227, 243, 0.712);
+    border: none;
+    color: black;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 12px;
+    border: 2px solid #ffffff;
+    transition-duration: 0.4s;
+}
+
 .btn_return {
-    background-color: white;
+    background-color: rgb(182, 153, 153);
     border: none;
     color: black;
     padding: 5px 20px;
@@ -79,8 +103,9 @@ h1{
     border: 2px solid #005a03;
     transition-duration: 0.4s;
 }
+
 .btn_return:hover {
-    background-color: #00ff08; /* Green */
+    background-color: #00ff08;
     color: white;
   }
 
@@ -93,7 +118,6 @@ h1{
     display: flex;
     align-items: top;
     justify-content: center;
-    background-image: url(images/screen-0.jpg);
     /* Full height */
     height: 100%;
     /* Center and scale the image nicely */
@@ -104,6 +128,7 @@ h1{
 
 .blog-container {
     border: 2px solid #000000;
+    border-radius: 5px;
     margin: 15;
     height: 100;
 }

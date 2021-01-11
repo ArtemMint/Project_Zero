@@ -4,14 +4,17 @@ body {
       "header header header"
       "nav article ads"
       "nav footer ads";
-    grid-template-rows: 80px 1fr 80px;
-    grid-template-columns: 10% 1fr 13%;
-    grid-gap: 3px;
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-columns: 15% 1fr 13%;
+    grid-gap: 4px;
     height: 100vh;
     margin: 0;
-    background-color: rgba(191, 241, 248, 0.712);
+    background-color: rgb(128, 58, 58);
 }
 
+
+
+/* CSS GRID */
 #pageHeader {
     grid-area: header;
 }
@@ -32,17 +35,24 @@ body {
 
 header {
     padding: 0px;
-    background: rgb(255, 218, 187);
+    background: rgb(255, 255, 255);
 }
 
 footer, article, nav, div {
     padding: 20px;
-    background: rgb(255, 218, 187);
+    background: rgb(255, 255, 255);
 }
 
-h1{
+/* END CSS GRID */
+
+h1 {
     text-align: center;
     font-size: 32px;
+}
+
+h2 {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .site-logo {
@@ -61,7 +71,7 @@ h1{
 }
 
 .comment_list{
-    background-color: rgb(210, 248, 213);
+    background-color: lightsalmon;
     border-radius: 15px;
 }
 
@@ -90,8 +100,12 @@ h1{
     transition-duration: 0.4s;
 }
 
+.btn-create-post:hover {
+    background-color: rgba(37, 230, 255, 0.712);
+}
+
 .btn_return {
-    background-color: rgb(182, 153, 153);
+    background-color: rgb(211, 255, 203);
     border: none;
     color: black;
     padding: 5px 20px;
@@ -105,8 +119,7 @@ h1{
 }
 
 .btn_return:hover {
-    background-color: #00ff08;
-    color: white;
+    background-color: rgb(115, 253, 120);
 }
 
 .profile_view{
@@ -130,7 +143,8 @@ h1{
     border: 2px solid #000000;
     border-radius: 5px;
     margin: 15;
-    height: 100;
+    height:auto;
+    background-color: powderblue;
 }
 
 .border-form {
@@ -146,10 +160,10 @@ h1{
 }
 
 .btn_save_post {
-    background-color: #4CAF50;
-    border: none;
+    background-color: #ffffff;
+    border-color: bisque;
     border-radius: 5px;
-    color: white;
+    color: rgb(48, 48, 48);
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -158,4 +172,58 @@ h1{
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+}
+
+.preview-article-picture {
+    float: left;
+}
+
+.preview-article-title {
+
+}
+
+.preview-article-date {
+
+}
+
+#preview-title-date{
+    left: 100px;
+    padding: 0;
+    background-color: powderblue;
+}
+
+.preview-article-text {
+    margin-bottom: 0;
+}
+
+.btn-detail {
+    background-color: rgb(207, 217, 248);
+    border: none;
+    color: black;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 12px;
+    border: 2px solid #005a03;
+    transition-duration: 0.4s;
+}
+.btn-detail:hover {
+    background-color:  rgb(159, 182, 252);
+}
+
+.btn-admin-panel {
+    text-decoration: none;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    border-radius: 5%;
+    font-size: 25px;
+    transition-duration: 0.5s;
+}
+
+.btn-admin-panel:hover {
+    background-color: #4CAF50;
+    color: white;
 }

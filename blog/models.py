@@ -7,9 +7,11 @@ class Blog(models.Model):
     Post in DB
     """
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    title = models.CharField(max_length=40, default=' ')
-    preview = models.ImageField(upload_to='posts', default='posts/default.jpg')
-    text = models.TextField(default=' ')
+    title = models.CharField(max_length=40, default=' ',
+                            help_text='Write the title of the article.')
+    preview = models.ImageField(upload_to='posts', default='posts/default.jpg', 
+                                help_text='Choose the picture of the article.')
+    text = models.TextField(default=' ', help_text='Write the text of the article.')
     created_date = models.DateTimeField(blank=True, default=timezone.now, null=True)
     published_date = models.DateTimeField(blank=True, default=timezone.now, null=True)
 
@@ -26,9 +28,8 @@ class Comment(models.Model):
     """
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE, blank=True)
-    comment_text = models.CharField(max_length=200, default=' ', blank=True)
+    comment_text = models.CharField(max_length=250, default=' ', blank=True)
     published_comment = models.DateTimeField(default=timezone.now, blank=True)
 
     def __str__(self):
-        return 'Comment by {} on {}'.format(self.author, self.comment_text)
-    
+        return f'Comment by {self.author} on {self.comment_text}'

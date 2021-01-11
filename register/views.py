@@ -45,6 +45,7 @@ def sign_in_view(request):
                 {'form': form,
                 'error': error})
 
+
 def logout_view(request):
     logout(request)
     return render(request, 

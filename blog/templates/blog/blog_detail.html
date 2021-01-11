@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block title %}
-    <title>Article "{{blog.title}}"</title>
+    <title>Article "{{blog.title|slice:":25"}}"</title>
 {% endblock title %}
 
 {% block header %}
@@ -11,9 +11,9 @@
 {% block content %}
 <div class="content">
     {% if blog.preview %}
-        <img class="post_preview"src="{{ blog.preview.url }}" alt="{{ blog.preview }}" style="width: 400px;">
+        <img class="post_preview" src="{{ blog.preview.url }}" alt="{{ blog.preview }}" style="width: 400px;">
     {% endif %}
-    <h3 style="min-width: 15%; font-weight: 700;">{{ blog.text }}</h3>
+    <h3 style="min-width: 15%; font-weight: 700; word-break: break-all;">{{ blog.text|linebreaks }}</h3>
     <a class="label">Creator:</a> <a>{{ blog.author }}</a><br>
     <p> <span class="label">Published date: </span> {{ blog.published_date }}</p>
     <a class="btn btn_return" href="{% url 'blog:blog' %}">Return</a><br>
@@ -22,7 +22,7 @@
         <ul>
             {% for comm in blog.comment_set.all %}
                 <li>User: {{ comm.author}}</li>
-                <a>Wrote: {{ comm.comment_text }}</a><br>
+                <a style="word-break:break-all;">Wrote: {{ comm.comment_text|linebreaks}}</a><br>
                 <a>When: {{ comm.published_comment }}</a><br>
             {% endfor %}
         </ul>

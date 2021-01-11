@@ -1,0 +1,13 @@
+{% block content %}
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {% for field in form %}
+            <p class="field">{{field.label}}</p>
+            <p class="field">{{field}}</p>
+        {% endfor %}
+        <button class="btn btn_user_sign_in" type="submit">Sign In</button>
+    </form>
+{% if error %}
+    <a>{{error}}</a>
+{% endif %}
+{% endblock %}

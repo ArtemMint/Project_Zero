@@ -10,15 +10,14 @@
 {% endblock header %}
     
 {% block content %}
-    <div class="creating-article-form">
+    <div class="border-form">
         <form method="POST" class="post-form" enctype="multipart/form-data">
             {% csrf_token %}
-            <p class="label title_post">{{ form.title.label }}</p>
-            <p class="title_post">{{ form.title }}</p>
-            <p class="label text_post">{{ form.text.label }}</p>
-            <p class="text_post">{{ form.text }}</p>
-            <p class="label preview_post">{{ form.preview.label }}</p>
-            <p class="preview_post">{{ form.preview }}</p>
+            {% for fields in form %}
+                <a class="field-label">{{ fields.label }}</a>
+                <p class="help_text">{{ fields.help_text }}</p>
+                <p class="field">{{ fields }}</p>
+            {% endfor %}
             <button class="btn btn_save_post" type="submit" class='save_post_btn'>Save post</button>
         </form>
     </div>

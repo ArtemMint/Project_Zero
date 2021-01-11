@@ -1,7 +1,14 @@
+{% extends 'register/base.html' %}
+
+{% block title %}
+    <h1> You are logout!</h1><br>
+{% endblock  %}
+
 {% block header %}
     <h1> You are logout!</h1><br>
-{% endblock header %}
+{% endblock  %}
 
 {% block content %}
-    <a href="/register/sign_in">Want to login?<a>
-{% endblock content %}
+    <a href="/register/sign_in">Want to login?<a><br>
+    <a href="/">Return to Home</a>
+{% endblock  %}

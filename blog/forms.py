@@ -12,6 +12,7 @@ class BlogForm(forms.ModelForm):
                 'preview':'Image to post:',
                 }
         fields = ('title','text','preview')
+        
 
 class CommentForm(forms.ModelForm):
 

@@ -17,9 +17,7 @@
             <a href="/register/sign_up">Sign Up</a>
             <a href="/register/sign_in">Sign In</a>
             <a href="#">Profile</a>
-            {% if user.is_superuser %}
-                <a href="/admin">Admin page</a>
-            {% endif %}
+            
             
         </header>
 
@@ -29,21 +27,23 @@
         </article>
 
         <nav id="mainNav">
-        
-        </nav>
-
-        <div id="siteAds">Ads
             <div class="profile_view">
-                {% comment %} /register/profile {% endcomment %}
                 <a href="#">{{request.user}}</a> 
                 <a href="/register/logout">Logout</a>
             </div>
+        </nav>
+
+        <div id="siteAds">Ads
+            
             {% block ads %}
                 
             {% endblock ads %}
         </div>
             
-        <footer id="pageFooter">Footer
+        <footer id="pageFooter">
+            {% if user.is_superuser %}
+                <a href="/admin">Admin page</a>
+            {% endif %}
         </footer>
 
         </body>  

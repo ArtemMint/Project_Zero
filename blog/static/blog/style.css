@@ -107,7 +107,7 @@ h1{
 .btn_return:hover {
     background-color: #00ff08;
     color: white;
-  }
+}
 
 .profile_view{
     float: center;
@@ -124,11 +124,38 @@ h1{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
 
 .blog-container {
     border: 2px solid #000000;
     border-radius: 5px;
     margin: 15;
     height: 100;
+}
+
+.border-form {
+    padding: 2% 30%;
+}
+  
+.field {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+  
+.help_text {
+    color: rgb(95, 93, 93);
+}
+
+.btn_save_post {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
 }

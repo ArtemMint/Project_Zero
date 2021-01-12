@@ -4,6 +4,16 @@ from django.template.defaultfilters import truncatechars
 from django.utils import timezone
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    class Meta:
+        verbose_name = ("Category")
+        verbose_name_plural = ("Categories")
+
+    def __str__(self):
+        return self.name
+
 class Blog(models.Model):
     """
     Post in DB
@@ -16,6 +26,7 @@ class Blog(models.Model):
     text = models.TextField(default=' ', help_text='Write the text of the article.')
     created_date = models.DateTimeField(blank=True, default=timezone.now, null=True)
     published_date = models.DateTimeField(blank=True, default=timezone.now, null=True)
+    category = models.CharField(max_length=100, default='uncategorized')
 
     def publish(self):
         self.published_date = timezone.now()

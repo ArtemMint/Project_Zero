@@ -1,6 +1,14 @@
 from django import forms
 
-from .models import Blog, Comment
+from .models import Blog, Comment, Category
+
+# choices = [('Nature','Nature'),('Sports','Sports'),('Technology','Technology')]
+choices = Category.objects.all().values_list('name','name')
+
+choice_list = []
+
+for item in choices:
+        choice_list.append(item)
 
 class BlogForm(forms.ModelForm):
     
@@ -10,8 +18,12 @@ class BlogForm(forms.ModelForm):
                 'title':'Title:',
                 'text':'Text:',
                 'preview':'Image to post:',
+                'categoty' : 'Category:',
                 }
-        fields = ('title','text','preview')
+        fields = ('title','category','text','preview')
+        widgets = {
+                'category' : forms.Select(choices=choice_list, attrs={'class':'form-control'}),
+        }
         
 
 class CommentForm(forms.ModelForm):

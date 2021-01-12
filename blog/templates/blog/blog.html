@@ -10,7 +10,7 @@
 {% endblock header %}
 
 {% block content %}
-    <div>
+    <div style="background-color: transparent;">
         <p><a class="btn btn-create-post" href="{% url 'blog:new_post' %}">Create new post</a></p>
         {% if blog_list %}
             {% for blog in blog_list %}

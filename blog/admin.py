@@ -12,7 +12,7 @@ class CommentInLine(admin.TabularInline):
 
 class BlogAdmin(admin.ModelAdmin):
     inlines = [CommentInLine]
-    list_display = ('author', 'title','text','published_date')
+    list_display = ('author', 'title','short_text','published_date')
     list_filter = ['published_date']
     search_fields = ['title']
 

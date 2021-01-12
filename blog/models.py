@@ -1,4 +1,6 @@
 from django.db import models
+from django.template.defaultfilters import truncatechars
+
 from django.utils import timezone
 
 
@@ -19,6 +21,10 @@ class Blog(models.Model):
         self.published_date = timezone.now()
         self.save()
 
+    @property
+    def short_text(self):
+         return truncatechars(self.text, 50)
+         
     def __str__(self):
         return self.title
 

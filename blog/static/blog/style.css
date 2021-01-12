@@ -9,7 +9,7 @@ body {
     grid-gap: 4px;
     height: 100vh;
     margin: 0;
-    background-color: rgb(128, 58, 58);
+    background-color: rgba(255, 172, 116, 0.541);
 }
 
 
@@ -20,11 +20,12 @@ body {
 }
 #pageFooter {
     grid-area: footer;
+    border-radius: 7px;
 }
 #mainArticle { 
     grid-area: article; 
     padding: 0px; 
-    border-radius: 10px;    
+    border-radius: 7px;    
 }
 #mainNav { 
     grid-area: nav; 
@@ -33,12 +34,7 @@ body {
     grid-area: ads; 
 }
 
-header {
-    padding: 0px;
-    background: rgb(255, 255, 255);
-}
-
-footer, article, nav, div {
+header, article, footer, nav, div {
     padding: 20px;
     background: rgb(255, 255, 255);
 }
@@ -71,7 +67,7 @@ h2 {
 }
 
 .comment_list{
-    background-color: lightsalmon;
+    background-color: rgb(255, 222, 209);
     border-radius: 15px;
 }
 
@@ -102,6 +98,7 @@ h2 {
 
 .btn-create-post:hover {
     background-color: rgba(37, 230, 255, 0.712);
+    box-shadow: 5px 10px 15px #888888;
 }
 
 .btn_return {
@@ -147,6 +144,11 @@ h2 {
     background-color: powderblue;
 }
 
+.blog-container:hover {
+    transition-duration: 0.5s;
+    box-shadow: 5px 10px 15px #777777
+}
+
 .border-form {
     padding: 2% 30%;
 }
@@ -160,9 +162,9 @@ h2 {
 }
 
 .btn_save_post {
-    background-color: #ffffff;
-    border-color: bisque;
-    border-radius: 5px;
+    background-color: #ffafafaf;
+    border: none;
+    border-radius: 15px;
     color: rgb(48, 48, 48);
     padding: 16px 32px;
     text-align: center;
@@ -172,6 +174,11 @@ h2 {
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+}
+
+.btn_save_post:hover {
+    background-color: #c9ffb0;
+    box-shadow: 5px 10px 15px #888888;
 }
 
 .preview-article-picture {
@@ -205,25 +212,32 @@ h2 {
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
-    border-radius: 12px;
-    border: 2px solid #005a03;
+    border-radius: 15px;
+    border: 2px solid #f7f7f7;
     transition-duration: 0.4s;
 }
+
 .btn-detail:hover {
     background-color:  rgb(159, 182, 252);
+    box-shadow: 5px 10px 15px #888888;
 }
 
 .btn-admin-panel {
+    background-color: rgb(207, 217, 248);
+    border: none;
+    color: black;
+    padding: 5px 20px;
+    text-align: center;
     text-decoration: none;
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-    border-radius: 5%;
-    font-size: 25px;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 12px;
+    border: 2px solid #808080;
     transition-duration: 0.5s;
 }
 
 .btn-admin-panel:hover {
     background-color: #4CAF50;
     color: white;
+    box-shadow: 5px 10px 15px #888888;
 }

@@ -15,10 +15,10 @@
 }
 
 .border-form {
-  border: 3px solid rgba(213, 236, 255, 0.795);
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 2%;
-  background-color: rgba(182, 191, 255, 0.685);
+  background-color: rgba(255, 235, 51, 0.404);
+  box-shadow: 2px 7px 15px #888888;
 }
 
 .field {
@@ -30,7 +30,7 @@
 }
 
 .btn {
-    background-color: #4CAF50; /* Green */
+    background-color: #ff0000; /* Green */
     border: none;
     color: white;
     padding: 16px 32px;
@@ -41,4 +41,8 @@
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(43, 199, 43);
+  box-shadow: 5px 10px 15px #888888;
 }

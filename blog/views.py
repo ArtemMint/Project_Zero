@@ -43,6 +43,7 @@ def blog_detail_view(request, blog_id):
         {'blog': blog,
         'comment_form': comment_form})
 
+
 def new_post_view(request):
     if request.method == "POST":
         form = BlogForm(request.POST, request.FILES)

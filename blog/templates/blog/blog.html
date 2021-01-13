@@ -10,19 +10,24 @@
 {% endblock header %}
 
 {% block content %}
-    <div>
+    <div style="background-color: transparent;">
         <p><a class="btn btn-create-post" href="{% url 'blog:new_post' %}">Create new post</a></p>
         {% if blog_list %}
             {% for blog in blog_list %}
                 <div class="blog-container">
-                    <a href="/blog/{{ blog.id }}/">
+                    <a class="preview-article-picture" href="/blog/{{ blog.id }}/">
                         <img src="{{ blog.preview.url }}" alt="{{ blog.preview }}" style="width: 100px;"><br>
-                        {{ blog.title }}
                     </a>
+                    <div id="preview-title-date">
+                        <h3 class="preview-article-title">{{ blog.title }}</h3>
+                        <h5 class="preview-article-date">{{ blog.published_date}}</h5>                             
+                    </div>
+                    <a class="preview-article-text">{{ blog.text|slice:":300"}}...</a>
+                    <p style="margin-bottom: 0;"><a class="btn btn-detail" href="/blog/{{ blog.id }}/">Read detail..</a></p>
                 </div>
             {% endfor %}
         {% else %}
-            <a>Posts aren`t available.</a>
+            <p style="color: red;">Posts aren`t available.</p>
         {% endif %}
     </div>
 {% endblock content %}

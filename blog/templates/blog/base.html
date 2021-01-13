@@ -10,15 +10,14 @@
 
     <body>
         <header id="pageHeader">
-            <a href="/home/">
-                <img class="site-logo" src="{% static 'blog/images/site-logo.png'%}" alt="site-logo.png" height="75" width="75">
-            </a>
-            <a href="/blog/">Blog</a>
-            <a href="/register/sign_up">Sign Up</a>
-            <a href="/register/sign_in">Sign In</a>
-            <a href="#">Profile</a>
-            
-            
+            <ul class="menu-list">
+                <li><a style="padding: 0;" href="/home/">
+                <img src="{% static 'blog/images/site-logo.png'%}" alt="site-logo.png" height="80" width="80">
+                </a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/register/sign_up">Sign Up</a></li>
+                <li><a href="/register/sign_in">Sign In</a></li>     
+            </ul>
         </header>
 
         <article id="mainArticle">
@@ -28,7 +27,8 @@
 
         <nav id="mainNav">
             <div class="profile_view">
-                <a href="#">{{request.user}}</a> 
+                <h4>{{request.user}}</h4> 
+                <a href="#">Profile</a>
                 <a href="/register/logout">Logout</a>
             </div>
         </nav>
@@ -42,7 +42,7 @@
             
         <footer id="pageFooter">
             {% if user.is_superuser %}
-                <a href="/admin">Admin page</a>
+                <a class=' btn btn-admin-panel' href="/admin">Admin page</a>
             {% endif %}
         </footer>
 
